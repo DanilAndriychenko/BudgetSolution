@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Budget
+namespace BudgetConsoleApp
 {
     public class User
     {
@@ -40,7 +40,7 @@ namespace Budget
             }
         }
 
-        private List<Wallet> wallets;
+        private readonly List<Wallet> _wallets;
         public List<Category> Categories { get; }
 
         public User(string name, string surname, string emailAddress)
@@ -50,30 +50,23 @@ namespace Budget
             // TODO validate emailAddress
             EmailAddress = emailAddress;
 
-            wallets = new List<Wallet>();
+            _wallets = new List<Wallet>();
             Categories = new List<Category>();
         }
-
-        public void ChangeSurname(string newSurname)
-        {
-            Surname = newSurname ?? throw new ArgumentNullException(nameof(newSurname));
-        }
-
-        public void AddWallet(string name, List<Category> categories, double balance = 0,
+        public void AddWallet(string name, List<Category> categories, decimal balance = 0,
             Currency currency = Currency.Uah, string description = "")
         {
-            wallets.Add(new Wallet(name, this, categories, balance, currency, description));
+            _wallets.Add(new Wallet(name, this, categories, balance, currency, description));
         }
-        public void AddWallet(string name, List<Category> categories, string description, double balance = 0,
+        public void AddWallet(string name, List<Category> categories, string description, decimal balance = 0,
             Currency currency = Currency.Uah)
         {
-            wallets.Add(new Wallet(name, this, categories, balance, currency, description));
+            _wallets.Add(new Wallet(name, this, categories, balance, currency, description));
         }
         public void AddWallet(Wallet wallet)
         {
-            foreach (var walletCategory in wallet.Categories)
-                if (!Categories.Contains(walletCategory)) return;
-            wallets.Add(wallet);
+            if (wallet.Categories.Any(walletCategory => !Categories.Contains(walletCategory))) return;
+            _wallets.Add(wallet);
         }
 
         public void AddCategory(string name, Color color = Color.Gray,
@@ -84,7 +77,7 @@ namespace Budget
 
         public Wallet GetWalletByName(string walletName)
         {
-            return wallets.FirstOrDefault(wallet => wallet.Name == walletName);
+            return _wallets.FirstOrDefault(wallet => wallet.Name == walletName);
         }
     }
 }

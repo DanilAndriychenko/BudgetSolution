@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetConsoleApp", "BudgetConsoleApp\BudgetConsoleApp.csproj", "{F60B90A6-B123-46E0-9208-5213D0492F22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetTestsProject", "BudgetTestsProject\BudgetTestsProject.csproj", "{3BFB1B15-A52A-4A54-A6BE-528987ED6504}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F60B90A6-B123-46E0-9208-5213D0492F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60B90A6-B123-46E0-9208-5213D0492F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60B90A6-B123-46E0-9208-5213D0492F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60B90A6-B123-46E0-9208-5213D0492F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BFB1B15-A52A-4A54-A6BE-528987ED6504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFB1B15-A52A-4A54-A6BE-528987ED6504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFB1B15-A52A-4A54-A6BE-528987ED6504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFB1B15-A52A-4A54-A6BE-528987ED6504}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

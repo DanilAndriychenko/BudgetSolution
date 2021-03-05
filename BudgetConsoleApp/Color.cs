@@ -1,4 +1,4 @@
-﻿namespace Budget
+﻿namespace BudgetConsoleApp
 {
     public enum Color
     {

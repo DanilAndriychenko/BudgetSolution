@@ -1,6 +1,7 @@
-﻿using System;
+﻿#nullable enable
+using System;
 
-namespace Budget
+namespace BudgetConsoleApp
 {
     public class Category
     {
@@ -21,15 +22,5 @@ namespace Budget
         {
             return Name;
         }
-
-        public override bool Equals(object? obj)
-        {
-            Category category = obj as Category;
-            if (category == null)
-                return false;
-            else
-                return Name.Equals(category.Name);
-        }
-            
     }
 }
