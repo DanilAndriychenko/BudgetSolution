@@ -10,21 +10,49 @@ namespace BudgetTestsProject
     public class UnitTest1
     {
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException),
+        "A userId of null was inappropriately allowed.")]
+        public void InvalidEmail()
+        {
+            new User("Sasha", "Shlyakhova", "email.com");
+            Assert.Fail();
+        }
+        [TestMethod]
         public void WalletSharing()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
             var danil = new User("Danil", "Andriychenko", "email2@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             wallet.AddTransaction(15.99m, wallet.Categories[0], DateTime.Now);
-            Assert.AreEqual(wallet.GetTransactions().Count, 1);
+            wallet.addContributor(danil);
+            Assert.AreEqual(wallet.Contributors.Count, 1);
+        }
+        [TestMethod]
+        public void WalletSharingToOwner()
+        {
+            var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
+            var categories = new List<Category> { new Category("Food") };
+            var wallet = new Wallet("Monobank", sasha, categories);
+            wallet.AddTransaction(15.99m, wallet.Categories[0], DateTime.Now);
+            wallet.addContributor(sasha);
+            Assert.AreEqual(wallet.Contributors.Count, 0);
+        }
+        [TestMethod]
+        public void WalletSharingToNone()
+        {
+            var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
+            var categories = new List<Category> { new Category("Food") };
+            var wallet = new Wallet("Monobank", sasha, categories);
+            wallet.AddTransaction(15.99m, wallet.Categories[0], DateTime.Now);
+            Assert.AreEqual(wallet.Contributors.Count, 0);
         }
 
         [TestMethod]
         public void CurrencyConverterTestUah()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             wallet.AddTransaction(15.99m, wallet.Categories[0], DateTime.Now);
             Assert.AreEqual(wallet.GetTransactions().Count, 1);
@@ -34,20 +62,20 @@ namespace BudgetTestsProject
         public void BalanceTest()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             for (int i = 0; i < 15; i++)
             {
                 wallet.AddTransaction(1, wallet.Categories[0], DateTime.Now);
             }
-            Assert.AreEqual(wallet.Balance, 15.00);
+            Assert.AreEqual(wallet.Balance, 15);
         }
 
         [TestMethod]
         public void BalanceDifferentCurrenciesTest()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             wallet.AddTransaction(1, wallet.Categories[0], DateTime.Now);
             wallet.AddTransaction(1, Currency.Eur, wallet.Categories[0], DateTime.Now);
@@ -59,7 +87,7 @@ namespace BudgetTestsProject
         public void IncomeTest()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             wallet.AddTransaction(1, wallet.Categories[0], DateTime.Now);
             wallet.AddTransaction(1, Currency.Eur, wallet.Categories[0], DateTime.Now);
@@ -72,7 +100,7 @@ namespace BudgetTestsProject
         public void IncomeZeroTest()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             wallet.AddTransaction(1, wallet.Categories[0], new DateTime(2001, 11, 30));
             wallet.AddTransaction(1, Currency.Eur, wallet.Categories[0], new DateTime(2001, 11, 30));
@@ -99,7 +127,7 @@ namespace BudgetTestsProject
         public void SpendingZeroTest()
         {
             var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
-            var categories = new List<Category> {new Category("Food")};
+            var categories = new List<Category> { new Category("Food") };
             var wallet = new Wallet("Monobank", sasha, categories);
             wallet.AddTransaction(-1, wallet.Categories[0], new DateTime(2001, 11, 30));
             wallet.AddTransaction(-1, Currency.Eur, wallet.Categories[0], new DateTime(2001, 11, 30));

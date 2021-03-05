@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace BudgetConsoleApp
@@ -47,12 +48,19 @@ namespace BudgetConsoleApp
         {
             Name = name;
             Surname = surname;
-            // TODO validate emailAddress
-            EmailAddress = emailAddress;
+            if (IsValidEmail(emailAddress))
+                EmailAddress = emailAddress;
+            else
+                throw new ArgumentException("Invalid email" + emailAddress);
 
             _wallets = new List<Wallet>();
             Categories = new List<Category>();
         }
+        public bool IsValidEmail(string source)
+        {
+            return new EmailAddressAttribute().IsValid(source);
+        }
+
         public void AddWallet(string name, List<Category> categories, decimal balance = 0,
             Currency currency = Currency.Uah, string description = "")
         {

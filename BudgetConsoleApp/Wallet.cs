@@ -35,7 +35,7 @@ namespace BudgetConsoleApp
             _transactions = new SortedSet<Transaction>(Comparer<Transaction>.Create((a, b)
                 => b.DateTime.CompareTo(a.DateTime)));
             Owner = owner;
-            Contributors = new List<User> {owner ?? throw new ArgumentNullException(nameof(owner))};
+            Contributors = new List<User>();
         }
 
         public void AddTransaction(decimal value, Currency currency,
@@ -79,8 +79,6 @@ namespace BudgetConsoleApp
             }
             return result;
         }
-
-        // TODO distinct common method for this two functions
         public decimal GetSpending()
         {
             return _transactions.TakeWhile(transaction => transaction.DateTime.Month == DateTime.Now.Month)
@@ -93,6 +91,14 @@ namespace BudgetConsoleApp
             return _transactions.TakeWhile(transaction => transaction.DateTime.Month == DateTime.Now.Month)
                 .Where(transaction => transaction.Value > 0)
                 .Aggregate<Transaction, decimal>(0, (current, transaction) => current + transaction.GetValue(Currency));
+        }
+
+        public void addContributor(User user)
+        {
+            if (user == Owner)
+                return;
+            if (!Contributors.Contains(user))
+                Contributors.Add(user);
         }
     }
 }

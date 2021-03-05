@@ -41,6 +41,5 @@ namespace BudgetConsoleApp
             return Value + " " + Enum.GetName(typeof(Currency), Currency);
         }
 
-        // TODO modifier for currency that makes convention from one currency to another and change Value field
     }
 }
