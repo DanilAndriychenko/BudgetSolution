@@ -33,7 +33,21 @@ namespace BudgetConsoleApp
             Currency = currency;
             Description = description ?? throw new ArgumentNullException(nameof(description));
             _transactions = new SortedSet<Transaction>(Comparer<Transaction>.Create((a, b)
-                => b.DateTime.CompareTo(a.DateTime)));
+                =>
+            {
+                if (b.Date > a.Date)
+                    return 1;
+                if (b.Date < a.Date)
+                    return -1;
+                if (Transaction.GetConvertedPrice(b.Value, b.Currency, b.Currency) >
+                    Transaction.GetConvertedPrice(a.Value, a.Currency, b.Currency))
+                    return -1;
+                if (Transaction.GetConvertedPrice(b.Value, b.Currency, b.Currency) <
+                    Transaction.GetConvertedPrice(a.Value, a.Currency, b.Currency))
+                    return 1;
+                return 0;
+                // return b.Date.CompareTo(a.Date);
+            }));
             Owner = owner;
             Contributors = new List<User>();
         }
@@ -66,6 +80,7 @@ namespace BudgetConsoleApp
             {
                 return new List<Transaction>();
             }
+
             var counter = 0;
             var result = new List<Transaction>();
             foreach (var transaction in _transactions)
@@ -77,18 +92,20 @@ namespace BudgetConsoleApp
                     break;
                 }
             }
+
             return result;
         }
+
         public decimal GetSpending()
         {
-            return _transactions.TakeWhile(transaction => transaction.DateTime.Month == DateTime.Now.Month)
+            return _transactions.TakeWhile(transaction => transaction.Date.Month == DateTime.Now.Month)
                 .Where(transaction => transaction.Value < 0)
                 .Aggregate<Transaction, decimal>(0, (current, transaction) => current - transaction.GetValue(Currency));
         }
 
         public decimal GetIncome()
         {
-            return _transactions.TakeWhile(transaction => transaction.DateTime.Month == DateTime.Now.Month)
+            return _transactions.TakeWhile(transaction => transaction.Date.Month == DateTime.Now.Month)
                 .Where(transaction => transaction.Value > 0)
                 .Aggregate<Transaction, decimal>(0, (current, transaction) => current + transaction.GetValue(Currency));
         }

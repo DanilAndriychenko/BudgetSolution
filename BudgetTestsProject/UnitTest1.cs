@@ -10,12 +10,51 @@ namespace BudgetTestsProject
     public class UnitTest1
     {
         [TestMethod]
+        public void TransactionDisplay()
+        {
+            var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
+            var categories = new List<Category>();
+            categories.Add(new Category("Food"));
+            var wallet = new Wallet("Monobank", sasha, categories);
+            wallet.AddTransaction(-1, wallet.Categories[0], DateTime.Now);
+            wallet.AddTransaction(-1, Currency.Eur, wallet.Categories[0], DateTime.Now);
+            wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], DateTime.Now);
+            wallet.AddTransaction(-1, Currency.Eur, wallet.Categories[0], new DateTime(2001, 11, 30));
+            wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], new DateTime(2000, 11, 30));
+            wallet.AddTransaction(-1, Currency.Eur, wallet.Categories[0], new DateTime(2011, 11, 30));
+            wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], new DateTime(2011, 11, 30));
+            wallet.AddTransaction(-1, Currency.Eur, wallet.Categories[0], new DateTime(2012, 11, 30));
+            wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], new DateTime(2001, 11, 30));
+            wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], new DateTime(2011, 12, 30));
+            wallet.AddTransaction(-1, Currency.Uah, wallet.Categories[0], new DateTime(2001, 11, 30));
+            Assert.AreEqual(wallet.GetTransactions()[9].Date, new DateTime(2001, 11, 30));
+        }
+        [TestMethod]
+        public void TransactionEditing()
+        {
+            var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
+            var categories = new List<Category> { new Category("Food") };
+            var wallet = new Wallet("Monobank", sasha, categories);
+            wallet.AddTransaction(15.99m, wallet.Categories[0], DateTime.Now);
+            wallet.GetTransactions()[0].Value = 16;
+            Assert.AreEqual(wallet.GetTransactions()[0].Value, 16);
+        }
+        [TestMethod]
+        public void WalletOwner()
+        {
+            var sasha = new User("Sasha", "Shlyakhova", "email@gmail.com");
+            var categories = new List<Category> { new Category("Food") };
+            var wallet = new Wallet("Monobank", sasha, categories);
+            wallet.AddTransaction(15.99m, wallet.Categories[0], DateTime.Now);
+            Assert.AreEqual(wallet.Owner, sasha);
+        }
+        
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException),
         "A userId of null was inappropriately allowed.")]
         public void InvalidEmail()
         {
             new User("Sasha", "Shlyakhova", "email.com");
-            Assert.Fail();
         }
         [TestMethod]
         public void WalletSharing()

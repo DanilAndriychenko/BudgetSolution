@@ -14,8 +14,8 @@
     <e p="C:\Users\danil\.nuget\packages\nunit3testadapter\3.16.1\build\netcoreapp2.1\NUnit3.TestAdapter.dll" t="Include" />
     <e p="C:\Users\danil\.nuget\packages\nunit3testadapter\3.16.1\build\netcoreapp2.1\NUnit3.TestAdapter.pdb" t="Include" />
     <e p="C:\Users\danil\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\danil\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_BudgetSolution.869528429.00" t="ExcludeRecursive" />
-    <e p="C:\Users\danil\RiderProjects\BudgetSolution" t="IncludeFlat">
+    <e p="C:\Users\danil\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_BudgetSolution.-662060523.00" t="ExcludeRecursive" />
+    <e p="C:\Users\danil\Desktop\BudgetSolution" t="IncludeFlat">
       <e p="BudgetConsoleApp" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="BudgetConsoleApp.csproj" t="IncludeRecursive" />

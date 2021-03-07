@@ -10,17 +10,17 @@ namespace BudgetConsoleApp
         public Currency Currency { get; }
         public Category Category { get; set; }
         public string Description { get; set; }
-        public DateTime DateTime { get; private set; }
+        public DateTime Date { get; private set; }
         public List<FileInfo> Files { get; set; }
 
-        public Transaction(decimal value, Currency currency, Category category, DateTime dateTime,
+        public Transaction(decimal value, Currency currency, Category category, DateTime date,
             string description = "", List<FileInfo> files = null)
         {
             Value = value;
             Currency = currency;
             Category = category ?? throw new ArgumentNullException(nameof(category));
             Description = description ?? throw new ArgumentNullException(nameof(description));
-            DateTime = dateTime;
+            Date = date;
             Files = files ?? new List<FileInfo>();
         }
 
