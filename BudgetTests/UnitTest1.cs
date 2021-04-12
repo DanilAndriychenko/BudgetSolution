@@ -13,8 +13,7 @@ namespace BudgetTests
         public void TransactionDisplay()
         {
             var sasha = new User(Guid.NewGuid(), "Sasha", "Shlyakhova", "email@gmail.com", "sun-ok");
-            var categories = new List<Category>();
-            categories.Add(new Category("Food"));
+            var categories = new List<Category> {new("Food")};
             var wallet = new Wallet("Monobank", sasha, categories, Guid.NewGuid());
             wallet.AddTransaction(-1, wallet.Categories[0], DateTime.Now);
             wallet.AddTransaction(-1, Currency.Eur, wallet.Categories[0], DateTime.Now);

@@ -1,7 +1,6 @@
 ﻿using System.Windows.Controls;
-using BudgetsWPF;
 
-namespace AV.ProgrammingWithCSharp.Budgets.GUI.WPF
+namespace BudgetsWPF
 {
     /// <summary>
     /// Interaction logic for MainView.xaml

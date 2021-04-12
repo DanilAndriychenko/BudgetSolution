@@ -21,23 +21,20 @@ namespace DataStorage
         public async Task AddOrUpdateAsync(TObject obj)
         {
             var stringObj = JsonSerializer.Serialize(obj);
-            await using var sw = new StreamWriter(Path.Combine(BaseFolder, obj.Guid.ToString()), false);
+            await using var sw = new StreamWriter(Path.Combine(BaseFolder, obj.Guid.ToString("N")), false);
             await sw.WriteAsync(stringObj);
         }
 
         public async Task<TObject> GetAsync(Guid guid)
         {
-            string stringObj = null;
-            string filePath = Path.Combine(BaseFolder, guid.ToString());
-
+            string stringObj;
+            var filePath = Path.Combine(BaseFolder, guid.ToString("N"));
             if (!File.Exists(filePath))
                 return null;
-
-            using (StreamReader sw = new StreamReader(filePath))
+            using (var sw = new StreamReader(filePath))
             {
                 stringObj = await sw.ReadToEndAsync();
             }
-
             return JsonSerializer.Deserialize<TObject>(stringObj);
         }
 
@@ -46,18 +43,13 @@ namespace DataStorage
             var res = new List<TObject>();
             foreach (var file in Directory.EnumerateFiles(BaseFolder))
             {
-                string stringObj = null;
-
+                string stringObj;
                 using (var sw = new StreamReader(file))
                 {
                     stringObj = await sw.ReadToEndAsync();
                 }
-
-                var item = JsonSerializer.Deserialize<TObject>(stringObj);
-                string guid = item.Guid.ToString();
-                res.Add(item);
+                res.Add(JsonSerializer.Deserialize<TObject>(stringObj));
             }
-
             return res;
         }
     }

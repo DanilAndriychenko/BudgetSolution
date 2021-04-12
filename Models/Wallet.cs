@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using DataStorage;
 
 namespace Models
 {
@@ -32,7 +33,7 @@ namespace Models
         public decimal Balance { get; set; }
         public string Description { get; }
         public Currency Currency { get; }
-        private readonly SortedSet<Transaction> _transactions;
+        public SortedSet<Transaction> Transactions { get; }
         public List<Category> Categories { get; }
         public User Owner { get; }
         public List<User> Contributors { get; }
@@ -43,11 +44,11 @@ namespace Models
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Categories = categories ?? throw new ArgumentNullException(nameof(categories));
-            Guid = Guid.NewGuid();
+            Guid = guid;
             Balance = balance;
             Currency = currency;
             Description = description ?? throw new ArgumentNullException(nameof(description));
-            _transactions = new SortedSet<Transaction>(Comparer<Transaction>.Create((a, b)
+            Transactions = new SortedSet<Transaction>(Comparer<Transaction>.Create((a, b)
                 =>
             {
                 if (b.Date > a.Date)
@@ -72,7 +73,7 @@ namespace Models
         {
             if (Categories.Contains(category))
             {
-                _transactions.Add(new Transaction(value, currency, category, dateTime, description, files));
+                Transactions.Add(new Transaction(value, currency, category, dateTime, description, files));
                 Balance += Transaction.GetConvertedPrice(value, currency, Currency);
             }
             else
@@ -90,9 +91,9 @@ namespace Models
 
         public bool RemoveTransaction(Transaction transactionToBeRemoved)
         {
-            if (!_transactions.Contains(transactionToBeRemoved)) 
+            if (!Transactions.Contains(transactionToBeRemoved)) 
                 return false;
-            _transactions.Remove(transactionToBeRemoved);
+            Transactions.Remove(transactionToBeRemoved);
             return true;
 
         }
@@ -100,14 +101,14 @@ namespace Models
         // Returns NumOfTransactionAtOnce from start if there is no transaction at start returns null
         public List<Transaction> GetTransactions(int start = 0)
         {
-            if (_transactions.Count < start)
+            if (Transactions.Count < start)
             {
                 return new List<Transaction>();
             }
 
             var counter = 0;
             var result = new List<Transaction>();
-            foreach (var transaction in _transactions)
+            foreach (var transaction in Transactions)
             {
                 counter++;
                 result.Add(transaction);
@@ -122,14 +123,14 @@ namespace Models
 
         public decimal GetSpending()
         {
-            return _transactions.TakeWhile(transaction => transaction.Date.Month == DateTime.Now.Month)
+            return Transactions.TakeWhile(transaction => transaction.Date.Month == DateTime.Now.Month)
                 .Where(transaction => transaction.Value < 0)
                 .Aggregate<Transaction, decimal>(0, (current, transaction) => current - transaction.GetValue(Currency));
         }
 
         public decimal GetIncome()
         {
-            return _transactions.TakeWhile(transaction => transaction.Date.Month == DateTime.Now.Month)
+            return Transactions.TakeWhile(transaction => transaction.Date.Month == DateTime.Now.Month)
                 .Where(transaction => transaction.Value > 0)
                 .Aggregate<Transaction, decimal>(0, (current, transaction) => current + transaction.GetValue(Currency));
         }

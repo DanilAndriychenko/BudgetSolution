@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows.Controls;
 using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
 using BudgetsWPF.Navigation;
 using Models;
@@ -14,7 +12,6 @@ namespace BudgetsWPF.Wallets
 {
     public class WalletsViewModel: BindableBase , INavigatable<MainNavigatableTypes>
     {
-        private WalletService _service;
         private WalletDetailsViewModel _currentWallet;
         public ObservableCollection<WalletDetailsViewModel> Wallets { get; set; }
 
@@ -36,7 +33,6 @@ namespace BudgetsWPF.Wallets
         public WalletsViewModel()
         {
             WalletService.Wallets = User.CurrUser.Wallets;
-            _service = new WalletService();
             Wallets = new ObservableCollection<WalletDetailsViewModel>();
             AddWalletCommand = new DelegateCommand(AddWallet);
             DeleteWalletCommand = new DelegateCommand(DeleteWallet);
@@ -47,13 +43,8 @@ namespace BudgetsWPF.Wallets
         }
 
 
-        public MainNavigatableTypes Type 
-        {
-            get
-            {
-                return MainNavigatableTypes.Wallets;
-            }
-        }
+        public MainNavigatableTypes Type => MainNavigatableTypes.Wallets;
+
         public void ClearSensitiveData()
         {
             
@@ -61,17 +52,16 @@ namespace BudgetsWPF.Wallets
 
         private async void AddWallet()
         {
-            Wallet wallet = new Wallet("New Wallet", User.CurrUser, new List<Category>(), Guid.NewGuid());
+            var wallet = new Wallet("New Wallet", User.CurrUser, new List<Category>(), Guid.NewGuid());
             await WalletService.AddWallet(wallet);
             Wallets.Add(new WalletDetailsViewModel(wallet));
             RaisePropertyChanged();
         }
 
-        private void DeleteWallet()
+        private async void DeleteWallet()
         {
-            if (_currentWallet == null)
-                return;
-            WalletService.DeleteWallet(_currentWallet.Wallet);
+            if (_currentWallet == null) return;
+            await WalletService.DeleteWallet(_currentWallet.Wallet);
             Wallets.Remove(_currentWallet);
         }
         

@@ -10,51 +10,54 @@ namespace Services
 {
     public class AuthenticationService
     {
-        private static readonly FileDataStorage<DBUser> _storage = new FileDataStorage<DBUser>();
+        private static readonly FileDataStorage<DbUser> Storage = new();
 
-        public async Task<User> AuthenticateAsync(AuthenticationUser authUser)
+        public static async Task<User> AuthenticateAsync(AuthenticationUser authUser)
         {
-            if (String.IsNullOrWhiteSpace(authUser.Login) || String.IsNullOrWhiteSpace(authUser.Password))
+            if (string.IsNullOrWhiteSpace(authUser.Login) || string.IsNullOrWhiteSpace(authUser.Password))
                 throw new ArgumentException("Login or Password is Empty");
-            var users = await _storage.GetAllAsync();
-            string password = EncryptPassword(authUser.Password);
+            var users = await Storage.GetAllAsync();
+            var password = EncryptPassword(authUser.Password);
             var dbUser = users.FirstOrDefault(user => user.Login == authUser.Login && user.Password == password);
             if (dbUser == null)
                 throw new Exception("Wrong Login or Password");
-            List<Wallet> wallets = new List<Wallet>(dbUser.Wallets.Count);
-            User user = new User(dbUser.Guid, dbUser.FirstName, dbUser.LastName, dbUser.Email, dbUser.Login, wallets);
-            //ToDo refactor
-            for(int i = 0; i < dbUser.Wallets.Count; i++)
-                wallets.Add(new Wallet("New Wallet", user, new List<Category>(), dbUser.Wallets[i]));
+            var wallets = new List<Wallet>(dbUser.Wallets.Count);
+            var user = new User(dbUser.Guid, dbUser.FirstName, dbUser.LastName, dbUser.Email, dbUser.Login, wallets);
+            for (int i = 0; i < dbUser.Wallets.Count; i++)
+            {
+                DbWallet wallet = await WalletService.GetStorage().GetAsync(dbUser.Wallets[i]);
+                wallets.Add(new Wallet(wallet.Name, user, new List<Category>(), wallet.Guid, wallet.Balance,
+                                                wallet.Currency, wallet.Description));
+            }
             User.CurrUser = user;
             return user;
         }
 
-        public static FileDataStorage<DBUser> GetStorage()
+        public static FileDataStorage<DbUser> GetStorage()
         {
-            return _storage;
+            return Storage;
         }
 
         private static string EncryptPassword(string password)
         {
-            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+            var data = System.Text.Encoding.ASCII.GetBytes(password);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             return System.Text.Encoding.ASCII.GetString(data);
         }
 
-        public async Task<bool> RegisterUserAsync(RegistrationUser regUser)
+        public static async Task RegisterUserAsync(RegistrationUser regUser)
         {
             Thread.Sleep(2000);
-            var users = await _storage.GetAllAsync();
+            var users = await Storage.GetAllAsync();
             var dbUser = users.FirstOrDefault(user => user.Login == regUser.Login);
             if (dbUser != null)
                 throw new Exception("User already exists");
-            if (String.IsNullOrWhiteSpace(regUser.Login) || String.IsNullOrWhiteSpace(regUser.Password) || String.IsNullOrWhiteSpace(regUser.LastName))
+            if (string.IsNullOrWhiteSpace(regUser.Login) || string.IsNullOrWhiteSpace(regUser.Password) ||
+                string.IsNullOrWhiteSpace(regUser.LastName))
                 throw new ArgumentException("Login, Password or Last Name is Empty");
-            dbUser = new DBUser(Guid.NewGuid(), regUser.FirstName, regUser.LastName, regUser.Email,
+            dbUser = new DbUser(Guid.NewGuid(), regUser.FirstName, regUser.LastName, regUser.Email,
                 regUser.Login, EncryptPassword(regUser.Password), new List<Guid>());
-            await _storage.AddOrUpdateAsync(dbUser);
-            return true;
+            await Storage.AddOrUpdateAsync(dbUser);
         }
     }
 }

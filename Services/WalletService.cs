@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using DataStorage;
 using Models;
 
 namespace Services
 {
     public class WalletService
     {
+        private static readonly FileDataStorage<DbWallet> Storage = new();
         public static List<Wallet> Wallets { get; set; }
 
         public WalletService()
@@ -16,26 +17,29 @@ namespace Services
             Wallets = User.CurrUser.Wallets;
         }
 
-        public static List<Wallet> GetWallets()
+        public static IEnumerable<Wallet> GetWallets()
         {
             return Wallets.ToList();
         }
 
-        public static async Task<bool> AddWallet(Wallet wallet)
+        public static async Task AddWallet(Wallet wallet)
         {
             Wallets.Add(wallet);
             await AddWalletAsync(wallet);
-            return true;
         }
 
-        public static async Task<bool> DeleteWallet(Wallet wallet)
+        public static async Task DeleteWallet(Wallet wallet)
         {
             Wallets.Remove(wallet);
             await RemoveWalletAsync(wallet);
-            return true;
         }
 
-        public static async Task<bool> AddWalletAsync(Wallet wallet)
+        public static FileDataStorage<DbWallet> GetStorage()
+        {
+            return Storage;
+        }
+
+        public static async Task AddWalletAsync(Wallet wallet)
         {
             var users = await AuthenticationService.GetStorage().GetAllAsync();
             var dbUser = users.FirstOrDefault(user =>
@@ -44,11 +48,12 @@ namespace Services
             if (dbUser == null)
                 throw new Exception("User cannot be found");
             dbUser.Wallets.Add(wallet.Guid);
+            await Storage.AddOrUpdateAsync(new DbWallet(wallet.Name, wallet.Description, wallet.Balance,
+                wallet.Currency, wallet.Transactions, wallet.Categories, dbUser.Guid, wallet.Guid));
             await AuthenticationService.GetStorage().AddOrUpdateAsync(dbUser);
-            return true;
         }
 
-        public static async Task<bool> RemoveWalletAsync(Wallet wallet)
+        public static async Task RemoveWalletAsync(Wallet wallet)
         {
             var users = await AuthenticationService.GetStorage().GetAllAsync();
             var dbUser = users.FirstOrDefault(user => user.Guid == User.CurrUser.Guid);
@@ -56,7 +61,6 @@ namespace Services
                 throw new Exception("User cannot be found");
             dbUser.Wallets.Remove(wallet.Guid);
             await AuthenticationService.GetStorage().AddOrUpdateAsync(dbUser);
-            return true;
         }
     }
 }

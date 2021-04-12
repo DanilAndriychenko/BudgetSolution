@@ -1,8 +1,6 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 
-namespace AV.ProgrammingWithCSharp.Budgets.GUI.WPF
+namespace BudgetsWPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

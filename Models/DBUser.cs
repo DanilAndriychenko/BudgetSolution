@@ -4,7 +4,7 @@ using DataStorage;
 
 namespace Models
 {
-    public class DBUser : IStorable
+    public class DbUser : IStorable
     {
         public Guid Guid { get; }
         public string FirstName { get; }
@@ -16,7 +16,7 @@ namespace Models
         public string Password { get;}
         public List<Guid> Wallets { get; }
 
-        public DBUser(Guid guid, string firstName, string lastName, string email, string login, string password, List<Guid> wallets)
+        public DbUser(Guid guid, string firstName, string lastName, string email, string login, string password, List<Guid> wallets)
         {
             Guid = guid;
             FirstName = firstName;

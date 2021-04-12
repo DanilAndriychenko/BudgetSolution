@@ -11,12 +11,14 @@ using Services;
 
 namespace BudgetsWPF.Authentication
 {
-    public class SignUpViewModel : INotifyPropertyChanged, INavigatable<AuthNavigatableTypes>
+    public sealed class SignUpViewModel : INotifyPropertyChanged, INavigatable<AuthNavigatableTypes>
     {
-        private const int MinNumOfSymbols = 3;
-        private RegistrationUser _regUser = new RegistrationUser();
+        private const int MinNumOfSymbolsInNames = 2;
+        private const int MinNumOfSymbolsInLogin = 5;
+        private const int MinNumOfSymbolsInPassword = 8;
+        private RegistrationUser _regUser = new();
         private readonly Action _gotoSignIn;
-        private static EmailAddressAttribute _emailValidator = new EmailAddressAttribute();
+        private static readonly EmailAddressAttribute EmailAddressAttribute = new();
 
         public AuthNavigatableTypes Type => AuthNavigatableTypes.SignUp;
 
@@ -61,12 +63,10 @@ namespace BudgetsWPF.Authentication
             get => _regUser.LastName;
             set
             {
-                if (_regUser.LastName != value)
-                {
-                    _regUser.LastName = value;
-                    OnPropertyChanged();
-                    SignUpCommand.RaiseCanExecuteChanged();
-                }
+                if (_regUser.LastName == value) return;
+                _regUser.LastName = value;
+                OnPropertyChanged();
+                SignUpCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -99,7 +99,7 @@ namespace BudgetsWPF.Authentication
             var authService = new AuthenticationService();
             try
             {
-                await authService.RegisterUserAsync(_regUser);
+                await AuthenticationService.RegisterUserAsync(_regUser);
             }
             catch (Exception ex)
             {
@@ -113,9 +113,11 @@ namespace BudgetsWPF.Authentication
 
         private bool IsSignUpEnabled()
         {
-            return !String.IsNullOrWhiteSpace(Login) && !String.IsNullOrWhiteSpace(Password) &&
-                   !String.IsNullOrWhiteSpace(LastName) && Login.Length >= MinNumOfSymbols &&
-                   FirstName.Length >= MinNumOfSymbols && LastName.Length >= MinNumOfSymbols && (new EmailAddressAttribute().IsValid(Email));
+            return !string.IsNullOrWhiteSpace(Login) && Login.Length >= MinNumOfSymbolsInLogin &&
+                !string.IsNullOrWhiteSpace(Password) && Password.Length >= MinNumOfSymbolsInPassword &&
+                !string.IsNullOrWhiteSpace(FirstName) && FirstName.Length >= MinNumOfSymbolsInNames &&
+                !string.IsNullOrWhiteSpace(LastName) && FirstName.Length >= MinNumOfSymbolsInNames &&
+                !string.IsNullOrWhiteSpace(Email) && EmailAddressAttribute.IsValid(Email);
         }
 
         public void ClearSensitiveData()
@@ -125,7 +127,7 @@ namespace BudgetsWPF.Authentication
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

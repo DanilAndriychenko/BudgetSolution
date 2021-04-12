@@ -11,83 +11,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d5f845e-860b-4be5-8ac7-82bd439c7c13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/App.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/App.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/BudgetsWPF.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Header.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Header.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Images/Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/MainViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Navigation/INavigatable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Navigation/NavigatableEnums.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Navigation/NavigationBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataStorage/DataStorage.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataStorage/FileDataStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataStorage/IStorable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/AuthenticationUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Category.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Color.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DBUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Icon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Models.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/RegistrationUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Transaction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Wallet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/AuthenticationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Services.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/WalletService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/modules.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/DBWallet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BudgetSolution/DesignTimeBuild/.dtbcache.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BudgetSolution/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BudgetSolution/v16/TestStore/0/000.testlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/BudgetSolution/v16/TestStore/0/testlog.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/.vs/BudgetConsoleApp/DesignTimeBuild/.dtbcache.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/.vs/BudgetConsoleApp/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/.vs/BudgetConsoleApp/v16/TestStore/0/000.testlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/.vs/BudgetConsoleApp/v16/TestStore/0/testlog.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/BudgetConsoleApp.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/Category.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/Color.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/Icon.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/Transaction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/User.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetConsoleApp/Wallet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetSolution.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetSolution.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetSolution.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetSolution.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTestsProject/.vs/BudgetTestsProject/DesignTimeBuild/.dtbcache.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTestsProject/.vs/BudgetTestsProject/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTestsProject/.vs/BudgetTestsProject/v16/TestStore/0/000.testlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTestsProject/.vs/BudgetTestsProject/v16/TestStore/0/testlog.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTestsProject/BudgetTestsProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetTestsProject/BudgetTestsProject.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTestsProject/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetTestsProject/UnitTest1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetTests/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetTests/UnitTest1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStorage/FileDataStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataStorage/FileDataStorage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DBUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DBUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Wallet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AuthenticationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/WalletService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/WalletService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,28 +55,18 @@
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/00/7dae82e6/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/AuthViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/3A0/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/43/d4ac9ec4/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CB5AD5F0-2D8D-47B7-8F84-5C504D4C629F/0c/b4b84721/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/233/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BudgetTestsProject/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BudgetTests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/28/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4568E436-F2A5-4468-A733-55EED71BEB1F/19/First.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/BudgetDesktop/Authentication/AuthViewModel.cs" />
-      <option value="$PROJECT_DIR$/Models/AuthenticationUser.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/Navigation/INavigatable.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/Authentication/SignUpViewModel.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/Navigation/NavigationBase.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/Navigation/NavigatableEnums.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/MainView.xaml" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/MainViewModel.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/Wallets/WalletDetailsViewModel.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/Authentication/SignInViewModel.cs" />
-      <option value="$PROJECT_DIR$/BudgetDesktop/MainWindow.xaml.cs" />
       <option value="$PROJECT_DIR$/BudgetDesktop/MainWindow.xaml" />
       <option value="$PROJECT_DIR$/BudgetWPF/Authentication/SignInView.xaml.cs" />
       <option value="$PROJECT_DIR$/BudgetWPF/Authentication/SignInViewModel.cs" />
@@ -156,7 +87,6 @@
       <option value="$PROJECT_DIR$/BudgetsWPF/BudgetsWPF.csproj" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml" />
-      <option value="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthViewModel.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Navigation/NavigatableEnums.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/MainViewModel.cs" />
@@ -165,17 +95,29 @@
       <option value="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsView.xaml.cs" />
-      <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsView.xaml" />
-      <option value="$PROJECT_DIR$/Models/Wallet.cs" />
       <option value="$PROJECT_DIR$/BudgetTestsProject/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/Models/Program.cs" />
-      <option value="$PROJECT_DIR$/Services/AuthenticationService.cs" />
-      <option value="$PROJECT_DIR$/Services/WalletService.cs" />
       <option value="$PROJECT_DIR$/Models/User.cs" />
-      <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" />
-      <option value="$PROJECT_DIR$/DataStorage/FileDataStorage.cs" />
+      <option value="$PROJECT_DIR$/BudgetTests/BudgetTests.csproj" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml.cs" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" />
+      <option value="$PROJECT_DIR$/BudgetTests/UnitTest1.cs" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/MainView.xaml.cs" />
+      <option value="$PROJECT_DIR$/../../../../../Program Files/dotnet/sdk/5.0.102/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.targets" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/MainWindow.xaml" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/App.xaml.cs" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/App.xaml" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/MainView.xaml" />
       <option value="$PROJECT_DIR$/Models/DBUser.cs" />
+      <option value="$PROJECT_DIR$/DataStorage/FileDataStorage.cs" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" />
+      <option value="$PROJECT_DIR$/DataStorage/IStorable.cs" />
+      <option value="$PROJECT_DIR$/Models/Wallet.cs" />
+      <option value="$PROJECT_DIR$/Services/WalletService.cs" />
+      <option value="$PROJECT_DIR$/Models/DBWallet.cs" />
+      <option value="$PROJECT_DIR$/Services/AuthenticationService.cs" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pIt42D8mv4Psf1kFQI4AM1oBTd" />
@@ -300,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615147228725</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial after cloning repository">
+      <created>1618248578700</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618248578700</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +280,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Add more tests" />
     <MESSAGE value="gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="gui" />
+    <MESSAGE value="Initial after cloning repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial after cloning repository" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -343,43 +293,17 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/DataStorage/FileDataStorage.cs</url>
-          <line>23</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolution\DataStorage\FileDataStorage.cs" initialLine="23" containingFunctionPresentation="method 'AddOrUpdateAsync'">
-            <startOffsets>
-              <option value="723" />
-            </startOffsets>
-            <endOffsets>
-              <option value="815" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Services/WalletService.cs</url>
-          <line>40</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolution\Services\WalletService.cs" initialLine="40" containingFunctionPresentation="method 'AddWalletAsync'">
-            <startOffsets>
-              <option value="1005" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1109" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/AuthenticationService.cs</url>
-          <line>24</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolution\Services\AuthenticationService.cs" initialLine="24" containingFunctionPresentation="method 'AuthenticateAsync'">
+          <line>16</line>
+          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolutionClone\BudgetSolution\Services\AuthenticationService.cs" initialLine="16" containingFunctionPresentation="method 'AuthenticateAsync'">
             <startOffsets>
-              <option value="1008" />
+              <option value="403" />
             </startOffsets>
             <endOffsets>
-              <option value="1114" />
+              <option value="497" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -389,5 +313,10 @@
         <PinnedItemInfo parentTag="Type#System.Guid" memberName="_j" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="new System.Collections.Generic.ICollectionDebugView&lt;Models.DbUser&gt;(this.&lt;users&gt;5__1).Items[0].Wallets" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
