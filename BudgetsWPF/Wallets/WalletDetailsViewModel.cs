@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System.Diagnostics;
+using Models;
 using Prism.Commands;
 using Prism.Mvvm;
 using Services;
@@ -28,6 +29,43 @@ namespace BudgetsWPF.Wallets
             {
                 Wallet.Balance = value;
                 WalletService.GetStorage().AddOrUpdateAsync(new DbWallet(Wallet.Name, Wallet.Description, value,
+                    Wallet.Currency, Wallet.Transactions,Wallet.Categories,Wallet.Owner.Guid, Wallet.Guid));
+                RaisePropertyChanged(nameof(DisplayName));
+            }
+        }
+        public string CurrencyStr
+        {
+            get { return Wallet.Currency.ToString().ToUpper(); }
+            set
+            {
+                switch (value)
+                {
+                    case "USD":
+                        Wallet.Currency = Currency.Usd;
+                        break;
+                    case "EUR":
+                        Wallet.Currency = Currency.Eur;
+                        break;
+                    case "UAH":
+                        Wallet.Currency = Currency.Uah;
+                        break;
+                }
+                WalletService.GetStorage().AddOrUpdateAsync(new DbWallet(Wallet.Name, Wallet.Description, Wallet.Balance,
+                    Wallet.Currency, Wallet.Transactions,Wallet.Categories,Wallet.Owner.Guid, Wallet.Guid));
+                RaisePropertyChanged(nameof(DisplayName));
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return Wallet.Description;
+            }
+            set
+            {
+                Wallet.Description = value;
+                WalletService.GetStorage().AddOrUpdateAsync(new DbWallet(Wallet.Name, Wallet.Description, Wallet.Balance,
                     Wallet.Currency, Wallet.Transactions,Wallet.Categories,Wallet.Owner.Guid, Wallet.Guid));
                 RaisePropertyChanged(nameof(DisplayName));
             }

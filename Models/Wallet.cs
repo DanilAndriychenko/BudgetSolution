@@ -31,8 +31,8 @@ namespace Models
         }
 
         public decimal Balance { get; set; }
-        public string Description { get; }
-        public Currency Currency { get; }
+        public string Description { get; set; }
+        public Currency Currency { get; set; }
         public SortedSet<Transaction> Transactions { get; }
         public List<Category> Categories { get; }
         public User Owner { get; }

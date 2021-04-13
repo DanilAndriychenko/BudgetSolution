@@ -11,6 +11,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" >
             <TextBlock Margin="10, 10, 10, 0">Name</TextBlock>
@@ -21,6 +22,19 @@
             <TextBlock Margin="10, 10, 10, 0">Balance</TextBlock>
             <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
                      Text="{Binding Balance, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <StackPanel Grid.Row="2" >
+                <TextBlock Margin="10, 10, 10, 0">Currency</TextBlock>
+                <ComboBox Name = "CurrencyList" SelectedIndex="0" Text = "{Binding CurrencyStr}" Margin="10" HorizontalAlignment="Stretch">
+                    <TextBlock>USD</TextBlock>
+                    <TextBlock>EUR</TextBlock>
+                    <TextBlock>UAH</TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Row="2" >
+                <TextBlock Margin="10, 10, 10, 0">Description</TextBlock>
+                <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch" 
+                Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            </StackPanel>
         </StackPanel>
         </Grid>
 </UserControl>
