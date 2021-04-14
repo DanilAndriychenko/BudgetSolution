@@ -108,6 +108,26 @@ namespace BudgetsWPF.Wallets
             }
         }
 
+        public string CurrencyStrTransaction
+        {
+            get => Transaction.Currency.ToString().ToUpper();
+            set
+            {
+                if (Transaction == null)
+                    return;
+                Transaction.Currency = value switch
+                {
+                    "USD" => Currency.Usd,
+                    "EUR" => Currency.Eur,
+                    "UAH" => Currency.Uah,
+                    _ => Wallet.Currency
+                };
+                TransactionService.GetStorage().AddOrUpdateAsync(new DbTransaction(Transaction.Value,
+                    Transaction.Currency,
+                    Transaction.Date, Transaction.Guid, Transaction.Description, Transaction.Files));
+                RaisePropertyChanged(TransactionDisplayName);
+            }
+        }
         public string Description
         {
             get => Wallet.Description;
@@ -127,7 +147,29 @@ namespace BudgetsWPF.Wallets
             }
         }
 
+        public string TransactionValue
+        {
+            get => Transaction.Value.ToString();
+            set
+            {
+                try
+                {
+                    decimal result = decimal.Parse(value);
+                    Transaction.Value = result;
+                }
+                catch (Exception e)
+                {
+                    // ignored
+                }
+                TransactionService.GetStorage().AddOrUpdateAsync(new DbTransaction(Transaction.Value,
+                    Transaction.Currency,
+                    Transaction.Date, Transaction.Guid, Transaction.Description, Transaction.Files));
+                RaisePropertyChanged(TransactionDisplayName);
+            }
+        }
+
         public string DisplayName => $"{Wallet.Name} (${Wallet.Balance})";
+        public string TransactionDisplayName => $"{Transaction.Value} (${Transaction.Currency})";
 
 
         private async void AddTransaction()

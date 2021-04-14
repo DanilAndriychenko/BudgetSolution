@@ -10,36 +10,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d5f845e-860b-4be5-8ac7-82bd439c7c13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/TransactionsView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/TransactionsViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/DbTransaction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/TransactionService.cs" afterDir="false" />
+    <list default="true" id="9d5f845e-860b-4be5-8ac7-82bd439c7c13" name="Default Changelist" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BudgetSolution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetTests/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetTests/UnitTest1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/AuthViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/MainView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/MainViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/MainViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Navigation/INavigatable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Navigation/INavigatable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Navigation/NavigationBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Navigation/NavigationBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/DBWallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DBWallet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Transaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Transaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Wallet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/AuthenticationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AuthenticationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/WalletService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/WalletService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,26 +33,34 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/2C5/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/1B2/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69E22334-F734-48D6-A4CC-E343D202C8BB/c5/4713fa8c/CulturePreservingExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/105/ComboBoxItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/28A/Selector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/6E/ComboBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/00/7dae82e6/Application.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/3A0/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/43/d4ac9ec4/Action.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CB5AD5F0-2D8D-47B7-8F84-5C504D4C629F/0c/b4b84721/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4568E436-F2A5-4468-A733-55EED71BEB1F/19/First.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/danil/RiderProjects/BudgetSolutionClone/BudgetSolution/Services/AuthenticationService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/2C5/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/69E22334-F734-48D6-A4CC-E343D202C8BB/11B/DependencyObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/SignInViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/SignUpView.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/00/7dae82e6/Application.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/C1/BindingExpressionBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/AuthViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/3A0/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/0a/24b38779/BindingExpressionBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetsWPF/Authentication/AuthView.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/1D5/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/43/d4ac9ec4/Action.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CB5AD5F0-2D8D-47B7-8F84-5C504D4C629F/0c/b4b84721/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/233/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/2C2/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BudgetTests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/28/Enum.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4568E436-F2A5-4468-A733-55EED71BEB1F/19/First.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/69E22334-F734-48D6-A4CC-E343D202C8BB/2b/6ac37942/ExceptionWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46BC5461-BD30-4C6F-BE04-ECAB5C39ADFE/48/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -125,12 +108,12 @@
       <option value="$PROJECT_DIR$/Services/WalletService.cs" />
       <option value="$PROJECT_DIR$/Models/DbTransaction.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/TransactionsViewModel.cs" />
-      <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" />
       <option value="$PROJECT_DIR$/Services/AuthenticationService.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletsViewModel.cs" />
       <option value="$PROJECT_DIR$/Services/TransactionService.cs" />
       <option value="$PROJECT_DIR$/Models/Wallet.cs" />
       <option value="$PROJECT_DIR$/Models/Transaction.cs" />
+      <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs" />
       <option value="$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsView.xaml" />
     </changedPaths>
   </component>
@@ -250,7 +233,7 @@
       <workItem from="1618238033419" duration="4770000" />
       <workItem from="1618340605902" duration="2460000" />
       <workItem from="1618387485972" duration="12419000" />
-      <workItem from="1618433249339" duration="5455000" />
+      <workItem from="1618433249339" duration="7708000" />
     </task>
     <task id="LOCAL-00001" summary="Add more tests">
       <created>1615147228725</created>
@@ -280,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618342674472</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".">
+      <created>1618438795163</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618438795163</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +304,8 @@
     <MESSAGE value="Initial after cloning repository" />
     <MESSAGE value="WalletStorage add" />
     <MESSAGE value="Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -327,55 +318,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BudgetsWPF/Wallets/WalletDetailsViewModel.cs</url>
-          <line>57</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolutionClone\BudgetSolution\BudgetsWPF\Wallets\WalletDetailsViewModel.cs" initialLine="57" containingFunctionPresentation="property 'Name'">
+          <line>155</line>
+          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolutionClone\BudgetSolution\BudgetsWPF\Wallets\WalletDetailsViewModel.cs" initialLine="155" containingFunctionPresentation="property 'TransactionValue'">
             <startOffsets>
-              <option value="1755" />
+              <option value="5340" />
             </startOffsets>
             <endOffsets>
-              <option value="1756" />
+              <option value="5341" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Services/AuthenticationService.cs</url>
-          <line>18</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolutionClone\BudgetSolution\Services\AuthenticationService.cs" initialLine="18" containingFunctionPresentation="method 'AuthenticateAsync'">
-            <startOffsets>
-              <option value="585" />
-            </startOffsets>
-            <endOffsets>
-              <option value="625" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/DataStorage/FileDataStorage.cs</url>
-          <line>29</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolutionClone\BudgetSolution\DataStorage\FileDataStorage.cs" initialLine="29" containingFunctionPresentation="method 'GetAsync'">
-            <startOffsets>
-              <option value="951" />
-            </startOffsets>
-            <endOffsets>
-              <option value="968" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Services/AuthenticationService.cs</url>
-          <line>31</line>
-          <properties documentPath="C:\Users\danil\RiderProjects\BudgetSolutionClone\BudgetSolution\Services\AuthenticationService.cs" initialLine="31" containingFunctionPresentation="method 'AuthenticateAsync'">
-            <startOffsets>
-              <option value="1433" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1495" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

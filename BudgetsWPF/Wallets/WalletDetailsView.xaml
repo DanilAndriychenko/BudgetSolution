@@ -63,7 +63,16 @@
                     <StackPanel Grid.Row="0">
                         <TextBlock Margin="10, 10, 10, 0">Value</TextBlock>
                         <TextBox MinWidth="300" Margin="10" HorizontalAlignment="Stretch"
-                                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                                 Text="{Binding TransactionValue, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Margin="10, 10, 10, 0">Currency</TextBlock>
+                        <ComboBox Name="CurrencyListTransaction" SelectedIndex="0" Text="{Binding CurrencyStrTransaction}" Margin="10"
+                                  HorizontalAlignment="Stretch">
+                            <TextBlock>USD</TextBlock>
+                            <TextBlock>EUR</TextBlock>
+                            <TextBlock>UAH</TextBlock>
+                        </ComboBox>
                     </StackPanel>
                 </Grid>
                 <Button Grid.Row="2" Grid.Column="0" Command="{Binding AddTransactionCommand}">
