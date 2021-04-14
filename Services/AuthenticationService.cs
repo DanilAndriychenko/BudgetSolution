@@ -26,7 +26,13 @@ namespace Services
             for (int i = 0; i < dbUser.Wallets.Count; i++)
             {
                 DbWallet wallet = await WalletService.GetStorage().GetAsync(dbUser.Wallets[i]);
-                wallets.Add(new Wallet(wallet.Name, user, new List<Category>(), wallet.Guid, wallet.Balance,
+                SortedSet<Transaction> transactions = new SortedSet<Transaction>();
+                foreach (var tGuid in wallet.Transactions)
+                {
+                    var t = await TransactionService.GetStorage().GetAsync(tGuid);
+                    transactions.Add(new Transaction(t.Value, t.Currency, t.Date, t.Guid, t.Description, t.Files));
+                }
+                wallets.Add(new Wallet(wallet.Name, user, wallet.Guid, transactions, wallet.Balance,
                                                 wallet.Currency, wallet.Description));
             }
             User.CurrUser = user;

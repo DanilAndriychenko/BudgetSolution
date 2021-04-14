@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Wallets
+namespace BudgetsWPF.Wallets
 {
     /// <summary>
     /// Interaction logic for WalletDetails.xaml

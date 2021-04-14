@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Authentication.SignInView"
+﻿<UserControl x:Class="BudgetsWPF.Authentication.SignInView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

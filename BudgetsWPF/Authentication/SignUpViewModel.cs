@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
 using BudgetsWPF.Navigation;
 using Models;
 using Prism.Commands;

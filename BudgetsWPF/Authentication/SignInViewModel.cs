@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
 using BudgetsWPF.Navigation;
 using Models;
 using Prism.Commands;
@@ -13,8 +12,8 @@ namespace BudgetsWPF.Authentication
     public class SignInViewModel : INotifyPropertyChanged, INavigatable<AuthNavigatableTypes>
     {
         private AuthenticationUser _authUser = new AuthenticationUser();
-        private Action _gotoSignUp;
-        private Action _gotoWallets;
+        private readonly Action _gotoSignUp;
+        private readonly Action _gotoWallets;
         private bool _isEnabled = true;
 
 

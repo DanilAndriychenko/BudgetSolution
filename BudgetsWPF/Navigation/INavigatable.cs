@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation
+namespace BudgetsWPF.Navigation
 {
     public interface INavigatable<TObject> where TObject: Enum
     {

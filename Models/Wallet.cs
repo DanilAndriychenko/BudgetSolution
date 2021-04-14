@@ -33,47 +33,35 @@ namespace Models
         public decimal Balance { get; set; }
         public string Description { get; set; }
         public Currency Currency { get; set; }
+
         public SortedSet<Transaction> Transactions { get; }
-        public List<Category> Categories { get; }
+
+        // public List<Category> Categories { get; }
         public User Owner { get; }
         public List<User> Contributors { get; }
         public Guid Guid { get; }
 
-        public Wallet(string name, User owner, List<Category> categories, Guid guid, decimal balance = 0,
+        public Wallet(string name, User owner /*, List<Category> categories*/, Guid guid,
+            SortedSet<Transaction> transactions, decimal balance = 0,
             Currency currency = Currency.Uah, string description = "")
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
-            Categories = categories ?? throw new ArgumentNullException(nameof(categories));
+            // Categories = categories ?? throw new ArgumentNullException(nameof(categories));
             Guid = guid;
             Balance = balance;
             Currency = currency;
             Description = description ?? throw new ArgumentNullException(nameof(description));
-            Transactions = new SortedSet<Transaction>(Comparer<Transaction>.Create((a, b)
-                =>
-            {
-                if (b.Date > a.Date)
-                    return 1;
-                if (b.Date < a.Date)
-                    return -1;
-                if (Transaction.GetConvertedPrice(b.Value, b.Currency, b.Currency) >
-                    Transaction.GetConvertedPrice(a.Value, a.Currency, b.Currency))
-                    return -1;
-                if (Transaction.GetConvertedPrice(b.Value, b.Currency, b.Currency) <
-                    Transaction.GetConvertedPrice(a.Value, a.Currency, b.Currency))
-                    return 1;
-                return 0;
-                // return b.Date.CompareTo(a.Date);
-            }));
+            Transactions = transactions;
             Owner = owner;
             Contributors = new List<User>();
         }
 
-        public void AddTransaction(decimal value, Currency currency,
+        /*public void AddTransaction(decimal value, Currency currency,
             Category category, DateTime dateTime, string description = "", List<FileInfo> files = null)
         {
             if (Categories.Contains(category))
             {
-                Transactions.Add(new Transaction(value, currency, category, dateTime, description, files));
+                Transactions.Add(new Transaction(value, currency, category, dateTime, , description, files));
                 Balance += Transaction.GetConvertedPrice(value, currency, Currency);
             }
             else
@@ -81,21 +69,20 @@ namespace Models
                 throw new ArgumentException("Category of transaction(" + category +
                                             ") doesn't match wallet's category list.");
             }
-        }
+        }*/
 
-        public void AddTransaction(decimal value,
+        /*public void AddTransaction(decimal value,
             Category category, DateTime dateTime, string description = "", List<FileInfo> files = null)
         {
             AddTransaction(value, Currency, category, dateTime, description, files);
-        }
+        }*/
 
         public bool RemoveTransaction(Transaction transactionToBeRemoved)
         {
-            if (!Transactions.Contains(transactionToBeRemoved)) 
+            if (!Transactions.Contains(transactionToBeRemoved))
                 return false;
             Transactions.Remove(transactionToBeRemoved);
             return true;
-
         }
 
         // Returns NumOfTransactionAtOnce from start if there is no transaction at start returns null

@@ -48,8 +48,14 @@ namespace Services
             if (dbUser == null)
                 throw new Exception("User cannot be found");
             dbUser.Wallets.Add(wallet.Guid);
+            SortedSet<Guid> transactionGuids = new SortedSet<Guid>();
+            foreach (var t in wallet.Transactions)
+            {
+                transactionGuids.Add(t.Guid);
+            }
+
             await Storage.AddOrUpdateAsync(new DbWallet(wallet.Name, wallet.Description, wallet.Balance,
-                wallet.Currency, wallet.Transactions, wallet.Categories, dbUser.Guid, wallet.Guid));
+                wallet.Currency, transactionGuids, dbUser.Guid, wallet.Guid));
             await AuthenticationService.GetStorage().AddOrUpdateAsync(dbUser);
         }
 

@@ -2,15 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:authentication="clr-namespace:AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Authentication"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:wallets1="clr-namespace:BudgetsWPF.Wallets"
              xmlns:authentication1="clr-namespace:BudgetsWPF.Authentication"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800">
     <UserControl.Resources>
         <DataTemplate DataType="{ x:Type authentication1:AuthViewModel}">
-            <authentication:AuthView></authentication:AuthView>
+            <authentication1:AuthView></authentication1:AuthView>
         </DataTemplate>
         <DataTemplate DataType="{ x:Type wallets1:WalletsViewModel}">
             <wallets1:WalletsView></wallets1:WalletsView>

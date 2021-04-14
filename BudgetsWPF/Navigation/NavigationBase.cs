@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
 using Prism.Mvvm;
 
 namespace BudgetsWPF.Navigation

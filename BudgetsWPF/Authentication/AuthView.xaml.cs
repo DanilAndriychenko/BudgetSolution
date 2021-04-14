@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Authentication
+namespace BudgetsWPF.Authentication
 {
     /// <summary>
     /// Interaction logic for AuthView.xaml

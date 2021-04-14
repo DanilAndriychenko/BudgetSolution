@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Models;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace BudgetTests
 {
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        /*[TestMethod]
         public void TransactionDisplay()
         {
             var sasha = new User(Guid.NewGuid(), "Sasha", "Shlyakhova", "email@gmail.com", "sun-ok");
@@ -173,6 +169,6 @@ namespace BudgetTests
             wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], new DateTime(2001, 11, 30));
             wallet.AddTransaction(-1, Currency.Usd, wallet.Categories[0], new DateTime(2001, 11, 30));
             Assert.AreEqual(wallet.GetSpending(), 0);
-        }
+        }*/
     }
 }

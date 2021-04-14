@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Authentication;
 
 namespace BudgetsWPF.Authentication
 {

@@ -1,5 +1,4 @@
-﻿using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
-using BudgetsWPF.Authentication;
+﻿using BudgetsWPF.Authentication;
 using BudgetsWPF.Navigation;
 using BudgetsWPF.Wallets;
 

@@ -10,19 +10,19 @@ namespace Models
         public string Description { get; }
         public decimal Balance { get; }
         public Currency Currency { get; }
-        public SortedSet<Transaction> Transactions { get; }
-        public List<Category> Categories { get; }
+        public SortedSet<Guid> Transactions { get; }
+        // public List<Category> Categories { get; }
         public Guid Owner { get; }
         public Guid Guid { get; }
 
-        public DbWallet(string name, string description, decimal balance, Currency currency, SortedSet<Transaction> transactions, List<Category> categories, Guid owner, Guid guid)
+        public DbWallet(string name, string description, decimal balance, Currency currency, SortedSet<Guid> transactions/*, List<Category> categories*/, Guid owner, Guid guid)
         {
             Name = name;
             Description = description;
             Balance = balance;
             Currency = currency;
             Transactions = transactions;
-            Categories = categories;
+            // Categories = categories;
             Owner = owner;
             Guid = guid;
         }

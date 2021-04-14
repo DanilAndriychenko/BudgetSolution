@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
 using BudgetsWPF.Navigation;
 using Models;
 using Prism.Commands;
@@ -17,10 +16,7 @@ namespace BudgetsWPF.Wallets
 
         public WalletDetailsViewModel CurrentWallet
         {
-            get
-            {
-                return _currentWallet;
-            }
+            get => _currentWallet;
             set
             {
                 _currentWallet = value;
@@ -52,7 +48,7 @@ namespace BudgetsWPF.Wallets
 
         private async void AddWallet()
         {
-            var wallet = new Wallet("New Wallet", User.CurrUser, new List<Category>(), Guid.NewGuid());
+            var wallet = new Wallet("New Wallet", User.CurrUser, Guid.NewGuid(), new SortedSet<Transaction>());
             await WalletService.AddWallet(wallet);
             Wallets.Add(new WalletDetailsViewModel(wallet));
             RaisePropertyChanged();

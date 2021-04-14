@@ -1,6 +1,4 @@
 ﻿using System;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Authentication;
-using AV.ProgrammingWithCSharp.Budgets.GUI.WPF.Navigation;
 using BudgetsWPF.Navigation;
 
 namespace BudgetsWPF.Authentication
