@@ -27,7 +27,7 @@
 
         <GridSplitter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"></GridSplitter>
 <!--Content-->
-        <ContentControl Grid.Row="0" Grid.Column="2" Content="{Binding CurrentWallet}"></ContentControl>
+        <ContentControl Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" Content="{Binding CurrentWallet}"></ContentControl>
         <Button Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Command="{Binding AddWalletCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10 0 10 0">Add</Button>
         <Button Grid.Row="1" Grid.Column = "0" Command="{Binding DeleteWalletCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right">Delete</Button>
      </Grid>

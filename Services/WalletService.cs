@@ -48,7 +48,7 @@ namespace Services
             if (dbUser == null)
                 throw new Exception("User cannot be found");
             dbUser.Wallets.Add(wallet.Guid);
-            SortedSet<Guid> transactionGuids = new SortedSet<Guid>();
+            List<Guid> transactionGuids = new List<Guid>();
             foreach (var t in wallet.Transactions)
             {
                 transactionGuids.Add(t.Guid);

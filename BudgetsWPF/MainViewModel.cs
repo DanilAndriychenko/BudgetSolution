@@ -1,5 +1,6 @@
 ﻿using BudgetsWPF.Authentication;
 using BudgetsWPF.Navigation;
+using BudgetsWPF.Transactions;
 using BudgetsWPF.Wallets;
 
 namespace BudgetsWPF
@@ -17,10 +18,16 @@ namespace BudgetsWPF
             {
                 return new AuthViewModel(() => Navigate(MainNavigatableTypes.Wallets));
             }
-            else
+            else if (type == MainNavigatableTypes.Wallets)
             {
-                return new WalletsViewModel();
+                return new WalletsViewModel(() => Navigate(MainNavigatableTypes.Transactions));
             }
+            else if (type == MainNavigatableTypes.Transactions)
+            {
+                return new TransactionsViewModel(() => Navigate(MainNavigatableTypes.Wallets));
+            }
+            else
+                return null;
         }
     }
 }

@@ -20,37 +20,32 @@ namespace BudgetsWPF.Wallets
             set
             {
                 _currentWallet = value;
+                Wallet.CurrWallet = _currentWallet.Wallet;
                 RaisePropertyChanged();
             }
         }
         public DelegateCommand AddWalletCommand { get; }
         public DelegateCommand DeleteWalletCommand { get; }
+        private Action _goToTransactions;
 
-        public WalletsViewModel()
+        public WalletsViewModel(Action goToTransactions)
         {
+            _goToTransactions = goToTransactions;
             WalletService.Wallets = User.CurrUser.Wallets;
             Wallets = new ObservableCollection<WalletDetailsViewModel>();
             AddWalletCommand = new DelegateCommand(AddWallet);
             DeleteWalletCommand = new DelegateCommand(DeleteWallet);
             foreach (var wallet in WalletService.GetWallets())
             {
-                Wallets.Add(new WalletDetailsViewModel(wallet));
+                Wallets.Add(new WalletDetailsViewModel(wallet, _goToTransactions));
             }
-        }
-
-
-        public MainNavigatableTypes Type => MainNavigatableTypes.Wallets;
-
-        public void ClearSensitiveData()
-        {
-            
         }
 
         private async void AddWallet()
         {
             var wallet = new Wallet("New Wallet", User.CurrUser, Guid.NewGuid(), new SortedSet<Transaction>());
             await WalletService.AddWallet(wallet);
-            Wallets.Add(new WalletDetailsViewModel(wallet));
+            Wallets.Add(new WalletDetailsViewModel(wallet, _goToTransactions));
             RaisePropertyChanged();
         }
 
@@ -59,6 +54,12 @@ namespace BudgetsWPF.Wallets
             if (_currentWallet == null) return;
             await WalletService.DeleteWallet(_currentWallet.Wallet);
             Wallets.Remove(_currentWallet);
+        }
+        public MainNavigatableTypes Type => MainNavigatableTypes.Wallets;
+
+        public void ClearSensitiveData()
+        {
+            
         }
         
     }

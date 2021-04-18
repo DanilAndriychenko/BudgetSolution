@@ -4,13 +4,13 @@ using System.IO;
 
 namespace Models
 {
-    public class Transaction :IComparable<Transaction>
+    public class Transaction : IComparable<Transaction>
     {
         public decimal Value { get; set; }
         public Currency Currency { get; set; }
         // public Category Category { get; set; }
         public string Description { get; set; }
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
         public List<FileInfo> Files { get; set; }
         public Guid Guid { get; }
 
@@ -30,7 +30,7 @@ namespace Models
         {
             return currencyOfPrice == currencyToConvert
                 ? price
-                : Math.Round((price * (int) currencyOfPrice) / (decimal) currencyToConvert, 2);
+                : Math.Round((price * (int)currencyOfPrice) / (decimal)currencyToConvert, 2);
         }
 
         public decimal GetValue(Currency currency)
@@ -55,7 +55,7 @@ namespace Models
 
         public override string ToString()
         {
-            return Value + " " + Enum.GetName(typeof(Currency), Currency);
+            return Value + " " + Enum.GetName(typeof(Currency), Currency) + "(Date: " + Date + ")";
         }
     }
 }

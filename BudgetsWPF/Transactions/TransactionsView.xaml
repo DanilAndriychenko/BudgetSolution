@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="BudgetsWPF.Transactions.TransactionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BudgetsWPF.Transactions" d:DataContext="{d:DesignInstance Type=local:TransactionsViewModel}"
+             mc:Ignorable="d" 
+             xmlns:transactions="clr-namespace:BudgetsWPF.Transactions"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{ x:Type transactions:TransactionDetailsViewModel}">
+            <transactions:TransactionDetailsView></transactions:TransactionDetailsView>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="100"></ColumnDefinition>
+            <ColumnDefinition Width="2"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="0" Grid.RowSpan="1" Name="WalletsList" ItemsSource="{Binding Transactions}" 
+                  DisplayMemberPath="DisplayName" SelectedItem="{Binding CurrentTransaction}"></ListView>
+
+        <GridSplitter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"></GridSplitter>
+        <ContentControl Grid.Row="0" Grid.Column="2" Content="{Binding CurrentTransaction}"></ContentControl>
+        <Button Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="0" Command="{Binding AddTransactionCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10 0 10 0">Add</Button>
+        <Button Grid.Row="1" Grid.Column = "0" Command="{Binding DeleteTransactionCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right">Delete</Button>
+        <Button Grid.Row="1" Grid.Column = "0" Command="{Binding GoBackCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Center">Go Back And Save</Button>
+    </Grid>
+</UserControl>

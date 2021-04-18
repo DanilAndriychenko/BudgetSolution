@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>BudgetsWPF</AssemblyName>
     <RootNamespace>BudgetsWPF</RootNamespace>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

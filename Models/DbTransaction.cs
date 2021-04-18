@@ -27,5 +27,15 @@ namespace Models
             Date = date;
             Files = files ?? new List<FileInfo>();
         }
+        /*public DbTransaction(Transaction transaction)
+        {
+            Guid = transaction.Guid;
+            Value = transaction.Value;
+            Currency = transaction.Currency;
+            // Category = category ?? throw new ArgumentNullException(nameof(category));
+            Description = transaction.Description;
+            Date = transaction.Date;
+            Files = transaction.Files;
+        }*/
     }
 }

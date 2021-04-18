@@ -15,6 +15,7 @@ namespace Models
 
     public class Wallet
     {
+        public static Wallet CurrWallet { get; set; }
         private const int NumOfTransactionAtOnce = 10;
         private string _name;
 
@@ -29,10 +30,28 @@ namespace Models
                     throw new Exception("Wallet name should not be empty.");
             }
         }
-
-        public decimal Balance { get; set; }
+        public decimal Balance { 
+            get
+            {
+                decimal balance = 0;
+                foreach (var transaction in Transactions)
+                    balance += Transaction.GetConvertedPrice(transaction.Value, transaction.Currency, Currency);
+                return balance;
+            }
+        }
         public string Description { get; set; }
-        public Currency Currency { get; set; }
+        private Currency _currancy;
+        public Currency Currency
+        {
+            get
+            {
+                return _currancy;
+            }
+            set
+            {
+                _currancy = value;
+            }
+        }
 
         public SortedSet<Transaction> Transactions { get; }
 
@@ -48,34 +67,18 @@ namespace Models
             Name = name ?? throw new ArgumentNullException(nameof(name));
             // Categories = categories ?? throw new ArgumentNullException(nameof(categories));
             Guid = guid;
-            Balance = balance;
-            Currency = currency;
+            _currancy = currency;
             Description = description ?? throw new ArgumentNullException(nameof(description));
             Transactions = transactions;
             Owner = owner;
             Contributors = new List<User>();
         }
 
-        /*public void AddTransaction(decimal value, Currency currency,
-            Category category, DateTime dateTime, string description = "", List<FileInfo> files = null)
+        public void AddTransaction(Transaction transaction)
         {
-            if (Categories.Contains(category))
-            {
-                Transactions.Add(new Transaction(value, currency, category, dateTime, , description, files));
-                Balance += Transaction.GetConvertedPrice(value, currency, Currency);
-            }
-            else
-            {
-                throw new ArgumentException("Category of transaction(" + category +
-                                            ") doesn't match wallet's category list.");
-            }
-        }*/
-
-        /*public void AddTransaction(decimal value,
-            Category category, DateTime dateTime, string description = "", List<FileInfo> files = null)
-        {
-            AddTransaction(value, Currency, category, dateTime, description, files);
-        }*/
+            Transactions.Add(transaction);
+            
+        }
 
         public bool RemoveTransaction(Transaction transactionToBeRemoved)
         {
@@ -86,7 +89,7 @@ namespace Models
         }
 
         // Returns NumOfTransactionAtOnce from start if there is no transaction at start returns null
-        public List<Transaction> GetTransactions(int start = 0)
+        public List<Transaction> GetTransactionsList(int start = 0)
         {
             if (Transactions.Count < start)
             {
@@ -98,11 +101,12 @@ namespace Models
             foreach (var transaction in Transactions)
             {
                 counter++;
-                result.Add(transaction);
                 if (counter == NumOfTransactionAtOnce + start)
                 {
                     break;
                 }
+                if(counter >= start)
+                    result.Add(transaction);
             }
 
             return result;
